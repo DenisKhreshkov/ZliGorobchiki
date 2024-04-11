@@ -631,6 +631,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4404338622456207310, guid: 415cbdb49ca98a14b99f6bac4911f769, type: 3}
+      propertyPath: interval
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 8377914217575332881, guid: 415cbdb49ca98a14b99f6bac4911f769, type: 3}
       propertyPath: m_Name
       value: Turrel
