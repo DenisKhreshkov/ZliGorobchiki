@@ -11,7 +11,7 @@ public class MainButtonController : MonoBehaviour
 
     public void StartButton()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("GameUITest");
     }
 
     public void SettingsButton()

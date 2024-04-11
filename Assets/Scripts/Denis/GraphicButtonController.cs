@@ -5,27 +5,17 @@ using UnityEngine.UI;
 
 public class GraphicButtonController : MonoBehaviour
 {
-    [SerializeField] private GameObject settingsPanel;
-    [SerializeField] private GameObject graphicPanel;
-
-    public void SetQualityHight()
+    public void SetQualityHigh(int index)
     {
-
+        QualitySettings.SetQualityLevel(index, true);
+    }
+    public void SetQualityMedium(int index)
+    {
+        QualitySettings.SetQualityLevel(index, true);
     }
 
-    public void SetQualityMedium()
+    public void SetQualityLow(int index)
     {
-
-    }
-
-    public void SetQualityLow()
-    {
-
-    }
-
-    public void BackButton()
-    {
-        graphicPanel.SetActive(false);
-        settingsPanel.SetActive(true);
+        QualitySettings.SetQualityLevel(index, true);
     }
 }
