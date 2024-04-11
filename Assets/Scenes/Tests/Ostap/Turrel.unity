@@ -901,6 +901,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2323867319991976087, guid: 415cbdb49ca98a14b99f6bac4911f769, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323867319991976087, guid: 415cbdb49ca98a14b99f6bac4911f769, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323867319991976087, guid: 415cbdb49ca98a14b99f6bac4911f769, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323867319991976087, guid: 415cbdb49ca98a14b99f6bac4911f769, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323867319991976087, guid: 415cbdb49ca98a14b99f6bac4911f769, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4404338622456207310, guid: 415cbdb49ca98a14b99f6bac4911f769, type: 3}
       propertyPath: interval
       value: 0.3
@@ -918,7 +938,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8377914217575332881, guid: 415cbdb49ca98a14b99f6bac4911f769, type: 3}
-      insertIndex: -1
+      insertIndex: 2
       addedObject: {fileID: 1376817124}
   m_SourcePrefab: {fileID: 100100000, guid: 415cbdb49ca98a14b99f6bac4911f769, type: 3}
 --- !u!1660057539 &9223372036854775807

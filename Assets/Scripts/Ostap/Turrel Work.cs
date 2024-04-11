@@ -1,21 +1,18 @@
 using UnityEngine;
+using System.Collections;
 
 public class TurrelWork : MonoBehaviour
 {
     [SerializeField] private GameObject ammo;
     [SerializeField] private float interval = 1f;
-    [SerializeField] private float visibleZone = 10f;
+    [SerializeField] private float speed = 5f;
 
     [SerializeField] private Transform _gunTransform;
     [SerializeField] private Transform _handleTransform;
-    private GameObject _enemyTarget;
-    [SerializeField] private GameObject[] enemies;
-
-    private float _distanceToEnemy;
-    private bool _canSeeTarget;
+    private GameObject _target;
     private void Awake()
     {
-        Invoke("Shot", 0.5f);
+       //s Invoke("Shot", 0.5f);
     }
     /*  private void FixedUpdate()
       {
@@ -37,30 +34,53 @@ public class TurrelWork : MonoBehaviour
           Debug.Log(_enemyTarget.name);
       } */
 
+    IEnumerator OnFire()
+    {
+        while (ammo != null)
+        {
+        GameObject getBullet = Instantiate(ammo, _handleTransform.position, Quaternion.identity);
+        _handleTransform.LookAt(_target.transform.position);
+
+        Rigidbody rb = getBullet.GetComponent<Rigidbody>();
+        rb.AddForce(_handleTransform.forward * speed, ForceMode.Impulse);
+
+        yield return new WaitForSeconds(interval);
+        }        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.CompareTag("Enemy") && _target == null)
+        {
+            _target = other.gameObject;
+            StartCoroutine(OnFire());
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy") && _target != null)
+        {
+            _target = null;
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.gameObject.CompareTag("Enemy") && _target == null)
         {
-            Debug.Log("d");
-            _gunTransform.LookAt(other.transform.position);
+            _target = other.gameObject;
+            StartCoroutine(OnFire());
         }
     }
 
     private void Update()
     {
-     //   if (_canSeeTarget && _enemyTarget != null) 
-        
-    }
-
-    private void Shot()
-    {
-        if (_canSeeTarget)
+        if (_target != null)
         {
-            Quaternion additionalRotation = Quaternion.Euler(90f, 0f, 0f);
-            Quaternion finalRotation = _handleTransform.rotation * additionalRotation;
-
-            Instantiate(ammo, _handleTransform.position, finalRotation);
+            _gunTransform.LookAt( _target.transform.position );
         }
-        Invoke("Shot", interval);
     }
+
 }
