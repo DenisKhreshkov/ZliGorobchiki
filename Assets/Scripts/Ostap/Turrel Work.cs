@@ -1,59 +1,86 @@
 using UnityEngine;
+using System.Collections;
 
 public class TurrelWork : MonoBehaviour
 {
     [SerializeField] private GameObject ammo;
     [SerializeField] private float interval = 1f;
-    [SerializeField] private float visibleZone = 10f;
+    [SerializeField] private float speed = 5f;
 
-    private Transform _gunTransform;
-    private Transform _handleTransform;
-    private GameObject _enemyTarget;
-    private GameObject[] enemies;
-
-    private float _closestDistance;
-    private float _distanceToEnemy;
-    private bool _canSeeTarget;
-    private void OnEnable()
+    [SerializeField] private Transform _gunTransform;
+    [SerializeField] private Transform _handleTransform;
+    private GameObject _target;
+    private void Awake()
     {
-        _gunTransform = transform.Find("Gun");
-        _handleTransform = transform.Find("Gun/Stick/Handle");
-        Invoke("Shot", 0.5f);
+       //s Invoke("Shot", 0.5f);
     }
-    private void FixedUpdate()
+    /*  private void FixedUpdate()
+      {
+          enemies = GameObject.FindGameObjectsWithTag("Enemy");
+          foreach (GameObject enemy in enemies)
+          {
+              _distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+              if (_distanceToEnemy < visibleZone)
+              {
+                  _enemyTarget = enemy;
+                  _canSeeTarget = true;
+              } else
+              {
+                  _canSeeTarget = false;
+                  _enemyTarget = null;
+              }
+          }
+
+          Debug.Log(_enemyTarget.name);
+      } */
+
+    IEnumerator OnFire()
     {
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        _closestDistance = visibleZone;
-        foreach (GameObject enemy in enemies)
+        while (ammo != null)
         {
-            _distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (_distanceToEnemy < _closestDistance)
-            {
-                _enemyTarget = enemy;
-                _closestDistance = _distanceToEnemy;
-                _canSeeTarget = true;
-            } else
-            {
-                _canSeeTarget = false;
-            }
+        GameObject getBullet = Instantiate(ammo, _handleTransform.position, Quaternion.identity);
+        _handleTransform.LookAt(_target.transform.position);
+
+        Rigidbody rb = getBullet.GetComponent<Rigidbody>();
+        rb.AddForce(_handleTransform.forward * speed, ForceMode.Impulse);
+
+        yield return new WaitForSeconds(interval);
+        }        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.CompareTag("Enemy") && _target == null)
+        {
+            _target = other.gameObject;
+            StartCoroutine(OnFire());
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy") && _target != null)
+        {
+            _target = null;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy") && _target == null)
+        {
+            _target = other.gameObject;
+            StartCoroutine(OnFire());
         }
     }
 
     private void Update()
     {
-        if (_canSeeTarget) 
-        _gunTransform.LookAt(_enemyTarget.transform.position);
-    }
-
-    private void Shot()
-    {
-        if (_canSeeTarget)
+        if (_target != null)
         {
-            Quaternion additionalRotation = Quaternion.Euler(90f, 0f, 0f);
-            Quaternion finalRotation = _handleTransform.rotation * additionalRotation;
-
-            Instantiate(ammo, _handleTransform.position, finalRotation);
+            _gunTransform.LookAt( _target.transform.position );
         }
-        Invoke("Shot", interval);
     }
+
 }
