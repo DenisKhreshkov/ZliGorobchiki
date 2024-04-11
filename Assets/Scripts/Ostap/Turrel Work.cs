@@ -6,43 +6,50 @@ public class TurrelWork : MonoBehaviour
     [SerializeField] private float interval = 1f;
     [SerializeField] private float visibleZone = 10f;
 
-    private Transform _gunTransform;
-    private Transform _handleTransform;
+    [SerializeField] private Transform _gunTransform;
+    [SerializeField] private Transform _handleTransform;
     private GameObject _enemyTarget;
-    private GameObject[] enemies;
+    [SerializeField] private GameObject[] enemies;
 
-    private float _closestDistance;
     private float _distanceToEnemy;
     private bool _canSeeTarget;
-    private void OnEnable()
+    private void Awake()
     {
-        _gunTransform = transform.Find("Gun");
-        _handleTransform = transform.Find("Gun/Stick/Handle");
         Invoke("Shot", 0.5f);
     }
-    private void FixedUpdate()
+    /*  private void FixedUpdate()
+      {
+          enemies = GameObject.FindGameObjectsWithTag("Enemy");
+          foreach (GameObject enemy in enemies)
+          {
+              _distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+              if (_distanceToEnemy < visibleZone)
+              {
+                  _enemyTarget = enemy;
+                  _canSeeTarget = true;
+              } else
+              {
+                  _canSeeTarget = false;
+                  _enemyTarget = null;
+              }
+          }
+
+          Debug.Log(_enemyTarget.name);
+      } */
+
+    private void OnTriggerStay(Collider other)
     {
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        _closestDistance = visibleZone;
-        foreach (GameObject enemy in enemies)
+        if (other.tag == "Enemy")
         {
-            _distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (_distanceToEnemy < _closestDistance)
-            {
-                _enemyTarget = enemy;
-                _closestDistance = _distanceToEnemy;
-                _canSeeTarget = true;
-            } else
-            {
-                _canSeeTarget = false;
-            }
+            Debug.Log("d");
+            _gunTransform.LookAt(other.transform.position);
         }
     }
 
     private void Update()
     {
-        if (_canSeeTarget) 
-        _gunTransform.LookAt(_enemyTarget.transform.position);
+     //   if (_canSeeTarget && _enemyTarget != null) 
+        
     }
 
     private void Shot()

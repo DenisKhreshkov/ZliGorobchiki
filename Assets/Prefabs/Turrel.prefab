@@ -309,6 +309,8 @@ MonoBehaviour:
   ammo: {fileID: 3163775199471149340, guid: 072e622e66af9d04dbfc111985be35d6, type: 3}
   interval: 1
   visibleZone: 10
+  _gunTransform: {fileID: 789870362440089950}
+  _handleTransform: {fileID: 2323867319991976087}
 --- !u!1 &8898839827309031203
 GameObject:
   m_ObjectHideFlags: 0
