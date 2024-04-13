@@ -2854,7 +2854,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448822329}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa15aa5ca69076040a0d59a0c254b070, type: 3}
   m_Name: 
@@ -2904,8 +2904,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopManu: {fileID: 122744339}
   towers:
-  - {fileID: 3374107013809620343, guid: cb06575bd74a85140b4e793f7f672136, type: 3}
-  - {fileID: 3693422991337846371, guid: 43204c671f3bd864ca4c8f8dd6a21e3f, type: 3}
+  - {fileID: 8266510017395005429, guid: b44fe0d014e6d7c48a0c7ce3c15aa2bd, type: 3}
+  - {fileID: 8266510017395005429, guid: b44fe0d014e6d7c48a0c7ce3c15aa2bd, type: 3}
 --- !u!1 &1470057344
 GameObject:
   m_ObjectHideFlags: 0
