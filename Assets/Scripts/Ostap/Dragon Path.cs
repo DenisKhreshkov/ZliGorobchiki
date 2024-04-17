@@ -50,7 +50,6 @@ public class DragonPath : MonoBehaviour
             _animator.SetTrigger("Iddle");
             _agent.speed = 0f;
         }
-     
     }
 
     private void Attack()
@@ -59,5 +58,4 @@ public class DragonPath : MonoBehaviour
         Invoke("Attack", interval);
         _mainCastle.MainHealth -= attackPower;
     }
-
 }
