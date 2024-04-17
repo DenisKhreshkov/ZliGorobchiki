@@ -8,7 +8,7 @@ public class GunShot : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log(damage);
+            collision.gameObject.GetComponent<DragonPath>().GetDamage(damage);
         }
         Destroy(gameObject);
     }
