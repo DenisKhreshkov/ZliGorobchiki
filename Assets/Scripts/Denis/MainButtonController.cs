@@ -8,10 +8,11 @@ public class MainButtonController : MonoBehaviour
 {
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject mainPanel;
+    [SerializeField] private GameObject selectLvlPanel;
 
     public void StartButton()
     {
-        SceneManager.LoadScene("GameUITest");
+        selectLvlPanel.SetActive(true);
     }
 
     public void SettingsButton()
@@ -23,5 +24,10 @@ public class MainButtonController : MonoBehaviour
     public void ExitButton()
     {
         Application.Quit();
+    }
+
+    public void Back()
+    {
+        selectLvlPanel.SetActive(false);
     }
 }
