@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tests/Denis/GameUITest.unity
     guid: e8bcdd999ca02314792393de0b424ebf
+  - enabled: 1
+    path: Assets/Scenes/Tests/Viacheslav/SampleScene.unity
+    guid: 8814174560902a245b55a8108e10d526
   m_configObjects: {}
