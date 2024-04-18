@@ -5,7 +5,7 @@ public class DragonPath : MonoBehaviour
 {
     private NavMeshAgent _agent;
     private Animator _animator;
-    private MainCastle _mainCastle;
+    [SerializeField] private MainCastle _mainCastle;
     [SerializeField] private Transform towerTransform;
     [SerializeField] private float health;
     [SerializeField] private float attackPower;
@@ -18,7 +18,6 @@ public class DragonPath : MonoBehaviour
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
         _agent.SetDestination(towerTransform.position);
-        _mainCastle = towerTransform.GetComponent<MainCastle>();
     }
 
     private void FixedUpdate()

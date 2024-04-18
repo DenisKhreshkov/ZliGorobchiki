@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - BuildPoint
+  - MainCastle
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Builder
   - Ground
   - Path
-  - 
+  - Enemy
   - 
   - 
   - 
