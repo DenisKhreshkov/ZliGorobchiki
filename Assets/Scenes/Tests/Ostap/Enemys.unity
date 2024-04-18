@@ -1068,7 +1068,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6140662362136024684, guid: 89fd5e0568133864aa7054efd4c6001e, type: 3}
       propertyPath: m_Speed
-      value: 0.35
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535160074713903744, guid: 89fd5e0568133864aa7054efd4c6001e, type: 3}
+      propertyPath: health
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8535160074713903744, guid: 89fd5e0568133864aa7054efd4c6001e, type: 3}
       propertyPath: towerTransform
@@ -1093,7 +1097,7 @@ PrefabInstance:
       objectReference: {fileID: 1801026067}
     - target: {fileID: 8143972194232508613, guid: 07f1a98b7fa4cb44fa455b2757cb0938, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9
+      value: -4.7
       objectReference: {fileID: 0}
     - target: {fileID: 8143972194232508613, guid: 07f1a98b7fa4cb44fa455b2757cb0938, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1101,7 +1105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8143972194232508613, guid: 07f1a98b7fa4cb44fa455b2757cb0938, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 34
+      value: 9.1
       objectReference: {fileID: 0}
     - target: {fileID: 8143972194232508613, guid: 07f1a98b7fa4cb44fa455b2757cb0938, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1154,7 +1158,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1748654311305307786, guid: a9742d43f2cd19a48a4d36864eb7188d, type: 3}
       propertyPath: m_Speed
-      value: 0.03
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457077574538301119, guid: a9742d43f2cd19a48a4d36864eb7188d, type: 3}
+      propertyPath: health
+      value: 53.9
       objectReference: {fileID: 0}
     - target: {fileID: 2457077574538301119, guid: a9742d43f2cd19a48a4d36864eb7188d, type: 3}
       propertyPath: towerTransform
@@ -1223,7 +1231,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2008430018815108762, guid: b7ae8ccbcd4e8034fac155770cb243d2, type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 13.91
       objectReference: {fileID: 0}
     - target: {fileID: 2453476395523847996, guid: b7ae8ccbcd4e8034fac155770cb243d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
