@@ -26,7 +26,7 @@ public class MainCastle : MonoBehaviour
     {
         _particleSystem.Play();
         StartCoroutine(CastleFallDown(7f));
-      //  StartCoroutine(CastleShake());
+     //   StartCoroutine(CastleShake());
         DragonPath[] dragons = FindObjectsOfType<DragonPath>();
         foreach (DragonPath dragon in dragons)   
         dragon.End();
@@ -48,14 +48,18 @@ public class MainCastle : MonoBehaviour
         castleTransform.position = targetPosition;
     }
 
-  /*  private IEnumerator CastleShake()
+    private IEnumerator CastleShake()
     {
+        float shakeX;
+        float shakeZ;
         while (true)
         {
-            castleTransform.position = new Vector3(Random.Range(-1f, 1f), castleTransform.position.y, Random.Range(-1f, 1f));
-            yield return new WaitForSeconds(0.5f);
-            castleTransform.position = new Vector3(0, castleTransform.position.y, 0);
-            yield return new WaitForSeconds(0.5f);
+            shakeX = Random.Range(-2f, 2f);
+            shakeZ = Random.Range(-2f, 2f);
+            castleTransform.position = new Vector3(castleTransform.position.x + shakeX, castleTransform.position.y, castleTransform.position.z + shakeZ);
+            yield return new WaitForSeconds(0.1f);
+            castleTransform.position = new Vector3(castleTransform.position.x - shakeX, castleTransform.position.y, castleTransform.position.z - shakeZ);
+            yield return new WaitForSeconds(0.2f);
         }
-    } */
+    } 
 }
