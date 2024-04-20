@@ -30,6 +30,7 @@ public class MainCastle : MonoBehaviour
         DragonPath[] dragons = FindObjectsOfType<DragonPath>();
         foreach (DragonPath dragon in dragons)   
         dragon.End();
+        FindObjectOfType<EnemySpawn>().StopAllCoroutines();
     }
 
     private IEnumerator CastleFallDown(float duration)

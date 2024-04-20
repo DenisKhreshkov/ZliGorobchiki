@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3112594866438996962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7632370474348415341}
+  - component: {fileID: 2304579847930659111}
+  - component: {fileID: 7833190323828294914}
+  m_Layer: 0
+  m_Name: Spawn point
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7632370474348415341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112594866438996962}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2304579847930659111
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112594866438996962}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &7833190323828294914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112594866438996962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1873eede72d3a4789ddfb4fc399954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minInterval: 2
+  maxInterval: 5
+  dragons:
+  - {fileID: 2453476395537523296, guid: b7ae8ccbcd4e8034fac155770cb243d2, type: 3}
+  - {fileID: 8143972194232768925, guid: 07f1a98b7fa4cb44fa455b2757cb0938, type: 3}
+  - {fileID: 438048766611204967, guid: 89fd5e0568133864aa7054efd4c6001e, type: 3}
+  - {fileID: 5751379296966312790, guid: a9742d43f2cd19a48a4d36864eb7188d, type: 3}
+  dragonsMaterials:
+    Fast:
+    - {fileID: 2100000, guid: 3cf5d93e63ceca94da9ffb40a6ed68ed, type: 2}
+    - {fileID: 2100000, guid: 2cc3d51c3b46bec4a95b1cf2d2488afd, type: 2}
+    - {fileID: 2100000, guid: 63a8442de5af83f49902935ef0d8904e, type: 2}
+    - {fileID: 2100000, guid: dcc7344671ccf0044a1fb5038007860e, type: 2}
+    Path:
+    - {fileID: 2100000, guid: 8a2d1f9276d746a42925272a2372ca11, type: 2}
+    - {fileID: 2100000, guid: ca5605f13d3937e40b508c59662c25fd, type: 2}
+    - {fileID: 2100000, guid: 8000a685f5b509b45b455c9ffd1f347f, type: 2}
+    - {fileID: 2100000, guid: 81d2b67dc7484724095d4343217c4e31, type: 2}
+    Shielt:
+    - {fileID: 2100000, guid: 1b51484aceb3349479b6c084713a5517, type: 2}
+    - {fileID: 2100000, guid: 5fcde950c31077243850f23d14ba9a5a, type: 2}
+    - {fileID: 2100000, guid: 0526c5be35ba93547acf614ed1950a2f, type: 2}
+    - {fileID: 2100000, guid: 483bc84e9c06fb74a978565bf66ff42d, type: 2}
+    Slow:
+    - {fileID: 2100000, guid: c6a1d1f1e0ac339489c17274f110669a, type: 2}
+    - {fileID: 2100000, guid: acd197acde96c544b8d8fd85cc2e8b20, type: 2}
+    - {fileID: 2100000, guid: b610c12dfb915564fa7d6ed9771555e3, type: 2}
+    - {fileID: 2100000, guid: 1131ac1e42ee4884ab91bd69310a2715, type: 2}
