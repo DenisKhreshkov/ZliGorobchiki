@@ -17,6 +17,8 @@ public class DragonPath : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
+        _mainCastle = FindObjectOfType<MainCastle>();
+        towerTransform = GameObject.FindGameObjectWithTag("Finish").transform;
         _agent.SetDestination(towerTransform.position);
     }
 
