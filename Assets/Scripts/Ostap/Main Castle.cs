@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class MainCastle : MonoBehaviour
@@ -7,7 +9,8 @@ public class MainCastle : MonoBehaviour
     private bool _loosed = false;
     private ParticleSystem _particleSystem;
     [SerializeField] private Transform castleTransform;
-
+    [SerializeField] private Slider healthSlider;
+    [SerializeField] private RectTransform loosingPanel;
 
     private void Start()
     {
@@ -20,11 +23,14 @@ public class MainCastle : MonoBehaviour
             _loosed = true;
             Loose();
         }
+        healthSlider.value = MainHealth;
     }
+
 
     private void Loose()
     {
         _particleSystem.Play();
+        loosingPanel.GetComponent<Animation>().Play();
         StartCoroutine(CastleFallDown(7f));
      //   StartCoroutine(CastleShake());
         DragonPath[] dragons = FindObjectsOfType<DragonPath>();
@@ -62,5 +68,8 @@ public class MainCastle : MonoBehaviour
             castleTransform.position = new Vector3(castleTransform.position.x - shakeX, castleTransform.position.y, castleTransform.position.z - shakeZ);
             yield return new WaitForSeconds(0.2f);
         }
-    } 
+    }
+
+    public void Restart() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    public void Menu() => SceneManager.LoadScene("DenisScene");
 }

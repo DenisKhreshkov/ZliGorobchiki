@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -27,7 +28,7 @@ public class DragonPath : MonoBehaviour
         if (!_agent.pathPending && _agent.remainingDistance <= _agent.stoppingDistance && !_attacking && _alive)
         {
             _attacking = true;
-            Attack();
+            StartCoroutine(StartAttack());
         } 
     }
 
@@ -58,5 +59,19 @@ public class DragonPath : MonoBehaviour
         _animator.SetTrigger("Attack");
         Invoke("Attack", interval);
         _mainCastle.MainHealth -= attackPower;
+    }
+
+    private IEnumerator StartAttack()
+    {
+        while (_alive)
+        {
+            _animator.SetTrigger("Attack");
+            for (int i = 0; i < 1/Time.fixedDeltaTime; i++)
+            {
+                _mainCastle.MainHealth -= attackPower * Time.fixedDeltaTime;
+                yield return new WaitForFixedUpdate(); 
+            }
+            yield return new WaitForSeconds(interval);
+        }
     }
 }
