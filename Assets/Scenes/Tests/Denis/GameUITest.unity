@@ -1019,6 +1019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameObject
       objectReference: {fileID: 0}
+    - target: {fileID: 4730885752771832960, guid: 907c51682bf8c4f46b7a1c269d1dd194, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8932879424134305807, guid: 907c51682bf8c4f46b7a1c269d1dd194, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1133.9161
