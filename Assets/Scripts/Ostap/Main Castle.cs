@@ -15,6 +15,7 @@ public class MainCastle : MonoBehaviour
     private void Start()
     {
         _particleSystem = GetComponentInChildren<ParticleSystem>();
+        healthSlider.maxValue = MainHealth;
     }
     private void FixedUpdate()
     {
@@ -23,6 +24,9 @@ public class MainCastle : MonoBehaviour
             _loosed = true;
             Loose();
         }
+        if (MainHealth > healthSlider.maxValue )
+        MainHealth = healthSlider.maxValue;
+
         healthSlider.value = MainHealth;
     }
 
@@ -32,7 +36,7 @@ public class MainCastle : MonoBehaviour
         _particleSystem.Play();
         loosingPanel.GetComponent<Animation>().Play();
         StartCoroutine(CastleFallDown(7f));
-     //   StartCoroutine(CastleShake());
+        StartCoroutine(CastleShake());
         DragonPath[] dragons = FindObjectsOfType<DragonPath>();
         foreach (DragonPath dragon in dragons)   
         dragon.End();
@@ -41,18 +45,11 @@ public class MainCastle : MonoBehaviour
 
     private IEnumerator CastleFallDown(float duration)
     {
-        float timeElapsed = 0f;
-        Vector3 startPosition = castleTransform.position;
-        Vector3 targetPosition = new Vector3(castleTransform.position.x, -18f, castleTransform.position.z);
-
-        while (timeElapsed < duration)
+        for (int i = 0; i < 7 / Time.fixedDeltaTime; i++)
         {
-            timeElapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(timeElapsed / duration);
-            castleTransform.position = Vector3.Lerp(startPosition, targetPosition, t);
-            yield return null;
+            castleTransform.position = new Vector3(castleTransform.position.x, castleTransform.position.y + (-2.5f * Time.fixedDeltaTime), castleTransform.position.z);
+            yield return new WaitForFixedUpdate();
         }
-        castleTransform.position = targetPosition;
     }
 
     private IEnumerator CastleShake()
@@ -61,12 +58,12 @@ public class MainCastle : MonoBehaviour
         float shakeZ;
         while (true)
         {
-            shakeX = Random.Range(-2f, 2f);
-            shakeZ = Random.Range(-2f, 2f);
+            shakeX = Random.Range(-0.5f, 0.5f);
+            shakeZ = Random.Range(-0.5f, 0.5f);
             castleTransform.position = new Vector3(castleTransform.position.x + shakeX, castleTransform.position.y, castleTransform.position.z + shakeZ);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
             castleTransform.position = new Vector3(castleTransform.position.x - shakeX, castleTransform.position.y, castleTransform.position.z - shakeZ);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
 

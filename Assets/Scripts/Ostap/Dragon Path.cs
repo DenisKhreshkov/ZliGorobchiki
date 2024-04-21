@@ -29,6 +29,7 @@ public class DragonPath : MonoBehaviour
         {
             _attacking = true;
             StartCoroutine(StartAttack());
+            _agent.avoidancePriority = 99;
         } 
     }
 
@@ -52,13 +53,6 @@ public class DragonPath : MonoBehaviour
             _animator.SetTrigger("Iddle");
             _agent.speed = 0f;
         }
-    }
-
-    private void Attack()
-    {
-        _animator.SetTrigger("Attack");
-        Invoke("Attack", interval);
-        _mainCastle.MainHealth -= attackPower;
     }
 
     private IEnumerator StartAttack()

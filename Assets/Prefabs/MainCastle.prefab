@@ -49,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainHealth: 40
   castleTransform: {fileID: 3535671891622949585}
+  healthSlider: {fileID: 0}
+  loosingPanel: {fileID: 0}
 --- !u!1 &3946080633450554502
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +167,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -218,7 +220,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.21916838
+      scalar: 0.14
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -919,7 +921,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 900
+      scalar: 1500
       minScalar: 10
       maxCurve:
         serializedVersion: 2
