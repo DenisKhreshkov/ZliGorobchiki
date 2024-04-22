@@ -29,7 +29,7 @@ public class DragonPath : MonoBehaviour
         {
             _attacking = true;
             StartCoroutine(StartAttack());
-            _agent.avoidancePriority = 99;
+            _agent.avoidancePriority = 90;
         } 
     }
 
@@ -40,6 +40,7 @@ public class DragonPath : MonoBehaviour
         {
             _alive = false;
             _agent.speed = 0f;
+            _agent.avoidancePriority = 99; 
             _animator.SetTrigger("Death");
             gameObject.tag = "Default";
             Destroy(gameObject, 4f);
