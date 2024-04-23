@@ -17,7 +17,7 @@ public class MainCastle : MonoBehaviour
         _particleSystem = GetComponentInChildren<ParticleSystem>();
         healthSlider.maxValue = MainHealth;
     }
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         if ( MainHealth <= 0 && !_loosed )
         {
