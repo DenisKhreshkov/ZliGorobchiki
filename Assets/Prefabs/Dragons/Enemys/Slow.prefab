@@ -578,7 +578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthFill: {fileID: 394866990939058204}
-  health: 25
+  health: 50
   attackPower: 4
   interval: 4
 --- !u!54 &6743426433268175583
