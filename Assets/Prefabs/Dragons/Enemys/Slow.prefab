@@ -526,13 +526,13 @@ PrefabInstance:
       addedObject: {fileID: 3443709027247346834}
     - targetCorrespondingSourceObject: {fileID: 116688, guid: 597bcf53ba51c9e4780d0ff799e28bc6, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 2457077574538301119}
+    - targetCorrespondingSourceObject: {fileID: 116688, guid: 597bcf53ba51c9e4780d0ff799e28bc6, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 6743426433268175583}
     - targetCorrespondingSourceObject: {fileID: 116688, guid: 597bcf53ba51c9e4780d0ff799e28bc6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1748654311305307786}
-    - targetCorrespondingSourceObject: {fileID: 116688, guid: 597bcf53ba51c9e4780d0ff799e28bc6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2457077574538301119}
   m_SourcePrefab: {fileID: 100100000, guid: 597bcf53ba51c9e4780d0ff799e28bc6, type: 3}
 --- !u!4 &5751379296965887658 stripped
 Transform:
@@ -565,6 +565,22 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 6.68
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2457077574538301119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5751379296966312790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0ceb9063786e014c8d00c489920adca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthFill: {fileID: 394866990939058204}
+  health: 25
+  attackPower: 4
+  interval: 4
 --- !u!54 &6743426433268175583
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -614,19 +630,3 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2457077574538301119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5751379296966312790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ceb9063786e014c8d00c489920adca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthFill: {fileID: 394866990939058204}
-  health: 25
-  attackPower: 4
-  interval: 4
