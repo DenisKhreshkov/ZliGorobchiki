@@ -7,14 +7,16 @@ public class DragonPath : MonoBehaviour
 {
     private NavMeshAgent _agent;
     private Animator _animator;
-    [SerializeField] private Canvas _canvas;
-    [SerializeField] private Slider _healthSlider;
-    [SerializeField] private MainCastle _mainCastle;
-    [SerializeField] private Transform towerTransform;
+    private Canvas _canvas;
+    private Slider _healthSlider;
+    private MainCastle _mainCastle;
+    private Transform _towerTransform;
 
+    [SerializeField] private Image healthFill;
     [SerializeField] private float health;
     [SerializeField] private float attackPower;
     [SerializeField] private float interval;
+
     private bool _alive = true;
     private bool _attacking = false;
     
@@ -25,8 +27,11 @@ public class DragonPath : MonoBehaviour
         _canvas = GetComponentInChildren<Canvas>();
         _healthSlider = GetComponentInChildren<Slider>();
         _mainCastle = FindObjectOfType<MainCastle>();
-        towerTransform = GameObject.FindGameObjectWithTag("Finish").transform;
-        _agent.SetDestination(towerTransform.position);
+        _canvas.worldCamera = Camera.main;
+        _healthSlider.maxValue = health;
+        _healthSlider.value = health;
+        _towerTransform = GameObject.FindGameObjectWithTag("Finish").transform;
+        _agent.SetDestination(_towerTransform.position);
     }
 
     private void FixedUpdate()
@@ -37,11 +42,15 @@ public class DragonPath : MonoBehaviour
             StartCoroutine(StartAttack());
             _agent.avoidancePriority = 90;
         } 
+        if (_canvas.worldCamera != null)
+        _canvas.transform.rotation = Camera.main.transform.rotation;
     }
 
     public void GetDamage(float damage)
     {
         health -= damage;
+        _healthSlider.value = health;
+        healthFill.color = new Color(1, (health / _healthSlider.maxValue) + 0.1f , 0);
         if (health < 0.1f && _alive)
         {
             _alive = false;

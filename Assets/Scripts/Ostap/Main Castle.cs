@@ -40,6 +40,9 @@ public class MainCastle : MonoBehaviour
         DragonPath[] dragons = FindObjectsOfType<DragonPath>();
         foreach (DragonPath dragon in dragons)   
         dragon.End();
+        TurrelWork[] turrelWorks = FindObjectsOfType<TurrelWork>();
+        foreach (TurrelWork turrelWork in turrelWorks)
+        turrelWork.enabled = false;
         FindObjectOfType<EnemySpawn>().StopAllCoroutines();
     }
 

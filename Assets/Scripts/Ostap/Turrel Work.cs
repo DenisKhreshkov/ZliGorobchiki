@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.AI;
 
 public class TurrelWork : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class TurrelWork : MonoBehaviour
     [SerializeField] private Transform _gunTransform;
     [SerializeField] private Transform _handleTransform;
     private GameObject _target;
+
     private void Awake()
     {
        //s Invoke("Shot", 0.5f);
@@ -80,7 +82,10 @@ public class TurrelWork : MonoBehaviour
         if (_target != null)
         {
             _gunTransform.LookAt( _target.transform.position );
+            if (_target.GetComponent<NavMeshAgent>().speed < 0.01f)
+            _target = null;
         }
+        
     }
 
 }

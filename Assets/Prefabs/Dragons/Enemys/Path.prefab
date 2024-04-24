@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.75227904, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -578,8 +578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ceb9063786e014c8d00c489920adca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainCastle: {fileID: 0}
-  towerTransform: {fileID: 0}
+  healthFill: {fileID: 5010363705181761678}
   health: 20
   attackPower: 3
   interval: 3
