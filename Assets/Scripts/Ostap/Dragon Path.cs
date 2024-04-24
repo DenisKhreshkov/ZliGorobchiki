@@ -1,13 +1,17 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 
 public class DragonPath : MonoBehaviour
 {
     private NavMeshAgent _agent;
     private Animator _animator;
+    [SerializeField] private Canvas _canvas;
+    [SerializeField] private Slider _healthSlider;
     [SerializeField] private MainCastle _mainCastle;
     [SerializeField] private Transform towerTransform;
+
     [SerializeField] private float health;
     [SerializeField] private float attackPower;
     [SerializeField] private float interval;
@@ -18,6 +22,8 @@ public class DragonPath : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
+        _canvas = GetComponentInChildren<Canvas>();
+        _healthSlider = GetComponentInChildren<Slider>();
         _mainCastle = FindObjectOfType<MainCastle>();
         towerTransform = GameObject.FindGameObjectWithTag("Finish").transform;
         _agent.SetDestination(towerTransform.position);
