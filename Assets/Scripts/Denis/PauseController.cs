@@ -7,6 +7,7 @@ public class PauseController : MonoBehaviour
     public void Resume()
     {
         PauseManu.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 
     public void Pause()
