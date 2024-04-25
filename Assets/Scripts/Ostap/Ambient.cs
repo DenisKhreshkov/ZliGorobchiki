@@ -17,6 +17,6 @@ public class Ambient : MonoBehaviour
     private MainCastle _mainCastle;
     private void LateUpdate()
     {
-        if (_mainCastle != null) if (_mainCastle.MainHealth <= 0) _bgAudioSource.Stop();
+        if (_mainCastle.MainHealth <= 0) _bgAudioSource.Stop();
     }
 }
