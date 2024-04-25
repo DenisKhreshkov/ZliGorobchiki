@@ -10,11 +10,13 @@ public class AudioSliderController : MonoBehaviour
 
     private void Start()
     {
+        audioSource.volume = PlayerPrefs.GetFloat("Volume");
         volumeSlider.value = audioSource.volume;
     }
 
     public void ChangeVolume()
     {
         audioSource.volume = volumeSlider.value;
+        PlayerPrefs.SetFloat("Volume", volumeSlider.value);
     }
 }
