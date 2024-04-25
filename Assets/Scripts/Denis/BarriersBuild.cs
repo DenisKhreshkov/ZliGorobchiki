@@ -1,11 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
-public class TowerBuild : MonoBehaviour
+public class BarriersBuild : MonoBehaviour
 {
     [SerializeField] private GameObject shopManu;
-    [SerializeField] private GameObject[] towers;
+    [SerializeField] private GameObject[] barriers;
     [SerializeField] private GameObject selectBuildPoint;
     [SerializeField] private Text money;
     [SerializeField] private int totalMoney = 999;
@@ -25,11 +26,11 @@ public class TowerBuild : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (Physics.Raycast(ray, out hit, 1200, 1<<6))
+            if (Physics.Raycast(ray, out hit, 1200, 1 << 6))
             {
                 selectBuildPoint = hit.transform.gameObject;
 
-                if (selectBuildPoint.tag == "BuildPoint")
+                if (selectBuildPoint.tag == "BuildBarrier")
                 {
                     shopManu.SetActive(true);
                 }
@@ -42,7 +43,7 @@ public class TowerBuild : MonoBehaviour
         money.text = totalMoney.ToString();
     }
 
-    public void BuyTurel1()
+    public void BuyBarrier()
     {
         if (totalMoney >= 5)
         {
@@ -51,13 +52,11 @@ public class TowerBuild : MonoBehaviour
         }
     }
 
-    public void PlaceTower(int index)
+    public void PlaceBarrier(int index)
     {
-        if (selectBuildPoint.tag != "BuildBarrier")
-        {
-            BuyTurel1();
-            Instantiate(towers[index], selectBuildPoint.transform.position, Quaternion.identity);
+            BuyBarrier();
+            Instantiate(barriers[index], selectBuildPoint.transform.position, Quaternion.identity);
             shopManu.SetActive(false);
-        }
     }
+
 }
