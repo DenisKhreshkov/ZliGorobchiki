@@ -20,5 +20,4 @@ public class PauseController : MonoBehaviour
     {
         SceneManager.LoadScene("DenisScene");
     }
-
 }
