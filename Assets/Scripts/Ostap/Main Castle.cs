@@ -8,6 +8,7 @@ public class MainCastle : MonoBehaviour
     public float MainHealth;
     private bool _loosed = false;
     private ParticleSystem _particleSystem;
+    private AudioSource _audioSource;
     [SerializeField] private Transform castleTransform;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private RectTransform loosingPanel;
@@ -15,7 +16,9 @@ public class MainCastle : MonoBehaviour
     private void Start()
     {
         _particleSystem = GetComponentInChildren<ParticleSystem>();
+        _audioSource = GetComponent<AudioSource>();
         healthSlider.maxValue = MainHealth;
+        _audioSource.volume = PlayerPrefs.GetFloat("Volume");
     }
     private void LateUpdate()
     {
@@ -35,18 +38,19 @@ public class MainCastle : MonoBehaviour
     {
         _particleSystem.Play();
         loosingPanel.GetComponent<Animation>().Play();
-        StartCoroutine(CastleFallDown(7f));
+        StartCoroutine(CastleFallDown());
         StartCoroutine(CastleShake());
         DragonPath[] dragons = FindObjectsOfType<DragonPath>();
         foreach (DragonPath dragon in dragons)   
         dragon.End();
         TurrelWork[] turrelWorks = FindObjectsOfType<TurrelWork>();
         foreach (TurrelWork turrelWork in turrelWorks)
-        turrelWork.enabled = false;
+        turrelWork.IsWorking = false;
         FindObjectOfType<EnemySpawn>().StopAllCoroutines();
+        _audioSource.Play();
     }
 
-    private IEnumerator CastleFallDown(float duration)
+    private IEnumerator CastleFallDown()
     {
         for (int i = 0; i < 7 / Time.fixedDeltaTime; i++)
         {

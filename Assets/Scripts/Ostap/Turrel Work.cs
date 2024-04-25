@@ -12,6 +12,7 @@ public class TurrelWork : MonoBehaviour
     [SerializeField] private Transform _handleTransform;
     private GameObject _target;
 
+    public bool IsWorking = true;
     private void Awake()
     {
        //s Invoke("Shot", 0.5f);
@@ -38,7 +39,7 @@ public class TurrelWork : MonoBehaviour
 
     IEnumerator OnFire()
     {
-        while (ammo != null)
+        while (ammo != null && IsWorking)
         {
         GameObject getBullet = Instantiate(ammo, _handleTransform.position, Quaternion.identity);
         _handleTransform.LookAt(_target.transform.position);

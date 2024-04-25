@@ -57,7 +57,7 @@ public class DragonPath : MonoBehaviour
             _agent.speed = 0f;
             _agent.avoidancePriority = 99; 
             _animator.SetTrigger("Death");
-            gameObject.tag = "Default";
+            gameObject.tag = "Untagged";
             Destroy(gameObject, 4f);
         }
     }
@@ -68,6 +68,7 @@ public class DragonPath : MonoBehaviour
         {
             _animator.SetTrigger("Iddle");
             _agent.speed = 0f;
+            _healthSlider.gameObject.SetActive(false);
         }
     }
 
