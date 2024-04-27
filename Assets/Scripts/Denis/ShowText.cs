@@ -26,7 +26,7 @@ public class ShowText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void LVL1()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Map1");
     }
 
     public void LVL2()
