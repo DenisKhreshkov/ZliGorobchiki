@@ -97,9 +97,9 @@ GameObject:
   - component: {fileID: 6531228}
   - component: {fileID: 7399238680469781605}
   - component: {fileID: 8038927148231898562}
-  - component: {fileID: 4722874994405377127}
+  - component: {fileID: 9210732018136009325}
   m_Layer: 0
-  m_Name: Box_crate
+  m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,7 +307,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4722874994405377127
+--- !u!114 &9210732018136009325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -319,7 +319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4560ea438059684187a19591f1bda53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  liveTime: 20
+  liveTime: 30
+  fill: {fileID: 268079102397852421}
 --- !u!1 &196250
 GameObject:
   m_ObjectHideFlags: 0
@@ -5355,11 +5356,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3827017312481253114, guid: b627d836466d05b42868bcce41e83b28, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3827017312481253114, guid: b627d836466d05b42868bcce41e83b28, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b627d836466d05b42868bcce41e83b28, type: 3}
+--- !u!114 &268079102397852421 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3827017312481253114, guid: b627d836466d05b42868bcce41e83b28, type: 3}
+  m_PrefabInstance: {fileID: 3937310997589933567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2853153256610720456 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1241951954625746743, guid: b627d836466d05b42868bcce41e83b28, type: 3}
