@@ -8,7 +8,6 @@ public class Ambient : MonoBehaviour
     private void Start()
     {
         _bgAudioSource = GetComponent<AudioSource>();
-        _bgAudioSource.loop = true;
         _bgAudioSource.volume = PlayerPrefs.GetFloat("Volume") * volumeScale;
         _bgAudioSource.Play();
         _mainCastle = FindObjectOfType<MainCastle>();

@@ -354,9 +354,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 804921540}
   - {fileID: 1246145502}
   - {fileID: 712904637}
-  - {fileID: 804921540}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2097,6 +2097,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7033647587579759790, guid: acbd944a38191f84fbde240b470721a8, type: 3}
+      propertyPath: levelTime
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2115,6 +2119,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5733930932374440928, guid: 57538cc4e292f024f8919502a36e11b4, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7851654368175877753, guid: 57538cc4e292f024f8919502a36e11b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

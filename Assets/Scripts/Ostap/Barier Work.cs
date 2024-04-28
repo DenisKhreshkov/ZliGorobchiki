@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class BarierWork : MonoBehaviour
 {
+    private Canvas hpCanvas;
     private Slider healthSlider;
     private ParticleSystem particleSystem;
     private AudioSource audioSource;
@@ -17,6 +18,7 @@ public class BarierWork : MonoBehaviour
 
     private void Awake()
     {
+        hpCanvas = GetComponentInChildren<Canvas>();
         healthSlider = GetComponentInChildren<Slider>();
         particleSystem = GetComponentInChildren<ParticleSystem>();
         audioSource = GetComponent<AudioSource>();
@@ -36,6 +38,7 @@ public class BarierWork : MonoBehaviour
             liveTime -= Time.deltaTime;
             healthSlider.value = liveTime;
             fill.color = new Color(1-(liveTime / healthSlider.maxValue), liveTime / healthSlider.maxValue, 0);
+            hpCanvas.transform.rotation = Camera.main.transform.rotation;
             yield return null;
         }
         particleSystem.Play();
