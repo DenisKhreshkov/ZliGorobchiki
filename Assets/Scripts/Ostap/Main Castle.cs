@@ -47,6 +47,7 @@ public class MainCastle : MonoBehaviour
         foreach (TurrelWork turrelWork in turrelWorks)
         turrelWork.IsWorking = false;
         FindObjectOfType<EnemySpawn>().StopAllCoroutines();
+        FindObjectOfType<TimeForLevel>().Loose();
         _audioSource.Play();
     }
 

@@ -551,10 +551,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammo: {fileID: 3163775199471149340, guid: 072e622e66af9d04dbfc111985be35d6, type: 3}
-  interval: 1
-  speed: 5
+  interval: 0.7
+  speed: 18
   _gunTransform: {fileID: 3840467763046237057}
   _handleTransform: {fileID: 3137187747931612511}
+  IsWorking: 1
 --- !u!135 &3141573372108802530
 SphereCollider:
   m_ObjectHideFlags: 0
