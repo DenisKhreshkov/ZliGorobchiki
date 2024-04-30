@@ -552,7 +552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammo: {fileID: 3163775199471149340, guid: 072e622e66af9d04dbfc111985be35d6, type: 3}
   interval: 0.7
-  speed: 18
+  speed: 24
   _gunTransform: {fileID: 3840467763046237057}
   _handleTransform: {fileID: 3137187747931612511}
   IsWorking: 1
