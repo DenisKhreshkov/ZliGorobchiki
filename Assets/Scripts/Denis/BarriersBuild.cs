@@ -43,18 +43,32 @@ public class BarriersBuild : MonoBehaviour
         money.text = totalMoney.ToString();
     }
 
-    public void BuyBarrier()
+    public void BuyBarrier(int index)
     {
-        if (totalMoney >= 5)
+        if (index == 0)
         {
-            totalMoney -= 5;
-            UpdateCoinText();
+            if (totalMoney >= 5)
+            {
+                totalMoney -= 5;
+                UpdateCoinText();
+                PlaceBarrier(index);
+            }
         }
+
+        if (index == 1)
+        {
+            if (totalMoney >= 10)
+            {
+                totalMoney -= 10;
+                UpdateCoinText();
+                PlaceBarrier(index);
+            }
+        }
+
     }
 
     public void PlaceBarrier(int index)
     {
-            BuyBarrier();
             Instantiate(barriers[index], selectBuildPoint.transform.position, Quaternion.identity);
             shopManu.SetActive(false);
     }
