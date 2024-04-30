@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Prefabs/terrain/terrain textures/ALP_Assets/Realistic Terrain Textures FREE/Terrain Layers/Ground002.terrainlayer.meta
 guid: ce81e31c52cae4a489ca0d327996c0a9
-========
-guid: f3d0b4f3ae488d34688e6dc089ce913a
->>>>>>>> Viechaslav:Assets/ground.terrainlayer.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 8574412962073106934
