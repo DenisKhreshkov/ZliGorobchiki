@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
@@ -24,18 +21,11 @@ public class ShowText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         showText.SetActive(false);
     }
 
-    public void LVL1()
-    {
-        SceneManager.LoadScene("Map1");
-    }
+    public void LVL1() => SceneManager.LoadScene(1);
 
-    public void LVL2()
-    {
-        SceneManager.LoadScene("");
-    }
 
-    public void LVL3()
-    {
-        SceneManager.LoadScene("");
-    }
+    public void LVL2() => SceneManager.LoadScene(2);
+
+
+    public void LVL3() => SceneManager.LoadScene(3);
 }

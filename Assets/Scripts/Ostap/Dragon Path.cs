@@ -16,6 +16,7 @@ public class DragonPath : MonoBehaviour
     [SerializeField] private float health;
     [SerializeField] private float attackPower;
     [SerializeField] private float interval;
+    [SerializeField] private int giveMoney;
 
     private bool _alive = true;
     private bool _attacking = false;
@@ -54,12 +55,19 @@ public class DragonPath : MonoBehaviour
         if (health < 0.1f && _alive)
         {
             _alive = false;
-            _agent.speed = 0f;
-            _agent.avoidancePriority = 99; 
-            _animator.SetTrigger("Death");
-            gameObject.tag = "Untagged";
-            Destroy(gameObject, 4f);
+            Death();
         }
+    }
+
+    private void Death()
+    {
+        _agent.speed = 0f;
+        _agent.avoidancePriority = 99;
+        _animator.SetTrigger("Death");
+        gameObject.tag = "Untagged";
+        int givedMoney = Random.Range(giveMoney + 1, giveMoney - 1);
+
+        Destroy(gameObject, 4f);
     }
 
     public void End()

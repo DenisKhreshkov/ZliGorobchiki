@@ -119,6 +119,7 @@ MonoBehaviour:
   health: 15
   attackPower: 1
   interval: 1
+  giveMoney: 6
 --- !u!54 &1186165226699030047
 Rigidbody:
   m_ObjectHideFlags: 0
