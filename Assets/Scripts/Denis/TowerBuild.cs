@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Unity.PlasticSCM.Editor;
 
 public class TowerBuild : MonoBehaviour
 {
@@ -42,22 +43,40 @@ public class TowerBuild : MonoBehaviour
         money.text = totalMoney.ToString();
     }
 
-    public void BuyTurel1()
+    public void BuyTower(int index)
     {
-        if (totalMoney >= 5)
+        if (index == 0)
         {
-            totalMoney -= 5;
-            UpdateCoinText();
+            if (totalMoney >= 15)
+            {
+                totalMoney -= 15;
+                UpdateCoinText();
+                PlaceTower(index);
+            }
+        }
+        if (index == 1)
+        {
+            if (totalMoney >= 20)
+            {
+                totalMoney -= 20;
+                UpdateCoinText();
+                PlaceTower(index);
+            }
+        }
+        if (index == 2)
+        {
+            if (totalMoney >= 30)
+            {
+                totalMoney -= 30;
+                UpdateCoinText();
+                PlaceTower(index);
+            }
         }
     }
 
     public void PlaceTower(int index)
     {
-        if (selectBuildPoint.tag != "BuildBarrier")
-        {
-            BuyTurel1();
-            Instantiate(towers[index], selectBuildPoint.transform.position, Quaternion.identity);
-            shopManu.SetActive(false);
-        }
+        Instantiate(towers[index], selectBuildPoint.transform.position, Quaternion.identity);
+        shopManu.SetActive(false);
     }
 }
