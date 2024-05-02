@@ -76,5 +76,5 @@ public class MainCastle : MonoBehaviour
     }
 
     public void Restart() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    public void Menu() => SceneManager.LoadScene("DenisScene");
+    public void Menu() => SceneManager.LoadScene(0);
 }
