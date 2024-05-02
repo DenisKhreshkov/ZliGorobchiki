@@ -66,7 +66,9 @@ public class DragonPath : MonoBehaviour
         _animator.SetTrigger("Death");
         gameObject.tag = "Untagged";
         int givedMoney = Random.Range(giveMoney + 1, giveMoney - 1);
-
+        ShopController shopController = FindObjectOfType<ShopController>();
+        shopController.totalMoney += givedMoney;
+        shopController.UpdateCoinText();
         Destroy(gameObject, 4f);
     }
 
