@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class BarriersBuild : MonoBehaviour
 {
-    [SerializeField] private GameObject shopManu;
+    [SerializeField] private GameObject shopManu2;
     [SerializeField] private GameObject[] barriers;
     [SerializeField] private GameObject selectBuildPoint;
-    [SerializeField] private Text money;
-    [SerializeField] private int totalMoney = 999;
 
     private Camera camera;
+    public ShopController shop;
     RaycastHit hit;
 
     void Start()
     {
         camera = Camera.main;
+        shop = GetComponent<ShopController>();
     }
     void Update()
     {
@@ -29,40 +29,26 @@ public class BarriersBuild : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 1200, 1 << 6))
             {
                 selectBuildPoint = hit.transform.gameObject;
-
                 if (selectBuildPoint.tag == "BuildBarrier")
                 {
-                    shopManu.SetActive(true);
+                    shopManu2.SetActive(true);
                 }
             }
         }
-    }
-
-    public void UpdateCoinText()
-    {
-        money.text = totalMoney.ToString();
     }
 
     public void BuyBarrier(int index)
     {
         if (index == 0)
         {
-            if (totalMoney >= 5)
-            {
-                totalMoney -= 5;
-                UpdateCoinText();
-                PlaceBarrier(index);
-            }
+            shop.BuyBarrier1();
+            PlaceBarrier(index);
         }
 
         if (index == 1)
         {
-            if (totalMoney >= 10)
-            {
-                totalMoney -= 10;
-                UpdateCoinText();
-                PlaceBarrier(index);
-            }
+            shop.BuyBarrier2();
+            PlaceBarrier(index);
         }
 
     }
@@ -70,7 +56,7 @@ public class BarriersBuild : MonoBehaviour
     public void PlaceBarrier(int index)
     {
             Instantiate(barriers[index], selectBuildPoint.transform.position, Quaternion.identity);
-            shopManu.SetActive(false);
+            shopManu2.SetActive(false);
     }
 
 }

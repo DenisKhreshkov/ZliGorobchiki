@@ -8,14 +8,14 @@ public class TowerBuild : MonoBehaviour
     [SerializeField] private GameObject shopManu;
     [SerializeField] private GameObject[] towers;
     [SerializeField] private GameObject selectBuildPoint;
-    [SerializeField] private Text money;
-    [SerializeField] private int totalMoney = 999;
 
     private Camera camera;
+    public ShopController shop;
     RaycastHit hit;
 
     void Start()
     {
+        shop = GetComponent<ShopController>();
         camera = Camera.main;
     }
     void Update()
@@ -38,39 +38,22 @@ public class TowerBuild : MonoBehaviour
         }
     }
 
-    public void UpdateCoinText()
-    {
-        money.text = totalMoney.ToString();
-    }
-
     public void BuyTower(int index)
     {
         if (index == 0)
         {
-            if (totalMoney >= 15)
-            {
-                totalMoney -= 15;
-                UpdateCoinText();
-                PlaceTower(index);
-            }
+            shop.BuyTurel1();
+            PlaceTower(index);
         }
         if (index == 1)
         {
-            if (totalMoney >= 20)
-            {
-                totalMoney -= 20;
-                UpdateCoinText();
-                PlaceTower(index);
-            }
+            shop.BuyTurel2();
+            PlaceTower(index);
         }
         if (index == 2)
         {
-            if (totalMoney >= 30)
-            {
-                totalMoney -= 30;
-                UpdateCoinText();
-                PlaceTower(index);
-            }
+            shop.BuyTurel3();
+            PlaceTower(index);
         }
     }
 
