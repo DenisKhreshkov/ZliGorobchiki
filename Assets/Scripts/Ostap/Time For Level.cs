@@ -72,6 +72,7 @@ public class TimeForLevel : MonoBehaviour
                 PlayerPrefs.SetInt("Level3 complete", 100);
                 break;
         }
+        FindObjectOfType<RaycastBlock>().Blocks.SetActive(true);
     }
 
     public void Menu() => SceneManager.LoadScene(0);
