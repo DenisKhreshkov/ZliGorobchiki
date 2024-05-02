@@ -19,6 +19,7 @@ public class MainCastle : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         healthSlider.maxValue = MainHealth;
         _audioSource.volume = PlayerPrefs.GetFloat("Volume");
+        Time.timeScale = 1.0f;
     }
     private void LateUpdate()
     {
