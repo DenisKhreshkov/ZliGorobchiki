@@ -60,6 +60,7 @@ public class TimeForLevel : MonoBehaviour
 
     public void Win()
     {
+        GlobalVar.CanBuild = false;
         switch (SceneManager.GetActiveScene().name)
         {
             case "Map1":

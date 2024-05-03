@@ -1,1 +1,1 @@
-[System.Serializable]public class GlobalVar{public bool CanBuild = true;}
+public class GlobalVar{public static bool CanBuild = true;}

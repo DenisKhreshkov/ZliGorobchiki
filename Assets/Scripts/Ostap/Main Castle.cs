@@ -20,6 +20,7 @@ public class MainCastle : MonoBehaviour
         healthSlider.maxValue = MainHealth;
         _audioSource.volume = PlayerPrefs.GetFloat("Volume");
         Time.timeScale = 1.0f;
+        GlobalVar.CanBuild = true;
     }
     private void LateUpdate()
     {
@@ -37,7 +38,7 @@ public class MainCastle : MonoBehaviour
 
     private void Loose()
     {
-        _particleSystem.Play();
+        GlobalVar.CanBuild = false;
         loosingPanel.GetComponent<Animation>().Play();
         StartCoroutine(CastleFallDown());
         StartCoroutine(CastleShake());
@@ -49,6 +50,7 @@ public class MainCastle : MonoBehaviour
         turrelWork.IsWorking = false;
         FindObjectOfType<EnemySpawn>().StopAllCoroutines();
         FindObjectOfType<TimeForLevel>().Loose();
+        _particleSystem.Play();
         _audioSource.Play();
     }
 
