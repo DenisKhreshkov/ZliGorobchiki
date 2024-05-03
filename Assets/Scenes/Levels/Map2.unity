@@ -7130,7 +7130,7 @@ MonoBehaviour:
   ShopPanel: {fileID: 6716216936978428987}
   ShopPanel2: {fileID: 9221978493262184867}
   money: {fileID: 3688026218648587124}
-  totalMoney: 999
+  totalMoney: 30
   t1cost: 15
   t2cost: 20
   t3cost: 30
