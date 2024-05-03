@@ -26,7 +26,7 @@ public class TowerBuild : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (Physics.Raycast(ray, out hit, 1200, 1<<6))
+            if (Physics.Raycast(ray, out hit, 1200, 1<<6) && GlobalVar.CanBuild)
             {
                 selectBuildPoint = hit.transform.gameObject;
 
