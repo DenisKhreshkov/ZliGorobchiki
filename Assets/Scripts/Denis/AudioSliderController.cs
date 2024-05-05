@@ -8,6 +8,7 @@ public class AudioSliderController : MonoBehaviour
     public Slider volumeSlider;
     public AudioSource audioSource;
 
+    private void Awake() => PlayerPrefs.SetFloat("Volume", 1);
     private void Start()
     {
         audioSource.volume = PlayerPrefs.GetFloat("Volume");
