@@ -1,7 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using Unity.PlasticSCM.Editor;
 
 public class TowerBuild : MonoBehaviour
 {
