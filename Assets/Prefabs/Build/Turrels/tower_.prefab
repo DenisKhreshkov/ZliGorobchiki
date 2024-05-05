@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8851624794257880025}
   - component: {fileID: 5249586922644871134}
   - component: {fileID: 6706304203952618852}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: flag_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1267070235641394187}
   - component: {fileID: 4889535258961614266}
   - component: {fileID: 4522322855387971346}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 4054308724587415848}
   - component: {fileID: 8968493468738695876}
   - component: {fileID: 5193542073283391324}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 3840467763046237057}
   - component: {fileID: 3834090591026592427}
   - component: {fileID: 8610855390219570175}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rotater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 5506165091823895436}
   - component: {fileID: 1957456497494676538}
   - component: {fileID: 4469724006242639778}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: flag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 3075033853699196048}
   - component: {fileID: 2311510148242461890}
   - component: {fileID: 227143858886516327}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: column
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 5208772465539874154}
   - component: {fileID: 8791044044041324913}
   - component: {fileID: 3141573372108802530}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tower_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 3137187747931612511}
   - component: {fileID: 3000721076543628961}
   - component: {fileID: 5384634141616182572}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -42,7 +42,7 @@ public class TimeForLevel : MonoBehaviour
     public void Loose()
     {
         StopAllCoroutines();
-        float perfences = (levelTime / _totalLevelTime) * 100;
+        float perfences = 100 - ((levelTime / _totalLevelTime) * 100);
 
         switch (SceneManager.GetActiveScene().name)
         {
