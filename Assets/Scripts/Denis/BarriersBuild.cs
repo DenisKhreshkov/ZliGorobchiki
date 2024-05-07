@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BarriersBuild : MonoBehaviour
 {
@@ -32,6 +29,7 @@ public class BarriersBuild : MonoBehaviour
                 if (selectBuildPoint.tag == "BuildBarrier")
                 {
                     shopManu2.SetActive(true);
+                    GlobalVar.CanBuild = false;
                 }
             }
         }
@@ -57,6 +55,8 @@ public class BarriersBuild : MonoBehaviour
     {
             Instantiate(barriers[index], selectBuildPoint.transform.position, Quaternion.identity);
             shopManu2.SetActive(false);
+        Invoke("CanBuild", 0.1f);
     }
 
+    private void CanBuild() => GlobalVar.CanBuild = true;
 }

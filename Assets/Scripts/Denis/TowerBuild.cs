@@ -30,6 +30,7 @@ public class TowerBuild : MonoBehaviour
                 if (selectBuildPoint.tag == "BuildPoint")
                 {
                     shopManu.SetActive(true);
+                    GlobalVar.CanBuild = false;
                 }
             }
         }
@@ -58,5 +59,8 @@ public class TowerBuild : MonoBehaviour
     {
         Instantiate(towers[index], selectBuildPoint.transform.position, Quaternion.identity);
         shopManu.SetActive(false);
+        Invoke("CanBuild",0.1f);
     }
+
+    private void CanBuild() => GlobalVar.CanBuild = true;
 }
