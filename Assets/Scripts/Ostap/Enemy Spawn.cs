@@ -25,7 +25,11 @@ public class EnemySpawn : MonoBehaviour
     private GameObject _choosenDragon;
     private Material _choosenMaterial;
 
-    private void Start() => StartCoroutine(dragonSpawning());
+    private void Start()
+    {
+        StartCoroutine(dragonSpawning());
+        StartCoroutine(StartHardcore());
+    }
 
     private IEnumerator dragonSpawning()
     {
@@ -55,5 +59,18 @@ public class EnemySpawn : MonoBehaviour
             GameObject dragon = Instantiate(_choosenDragon, transform.position, Quaternion.identity);
             dragon.GetComponentInChildren<SkinnedMeshRenderer>().material = _choosenMaterial;
         }
+    }
+
+    private IEnumerator StartHardcore()
+    {
+        yield return new WaitForSeconds(100f);
+        minInterval -= 2;
+        maxInterval -= 2;
+        yield return new WaitForSeconds(40f);
+        minInterval = (minInterval / 2) + 2;
+        maxInterval = (maxInterval / 2) + 3;
+        yield return new WaitForSeconds(30f);
+        minInterval = 2;
+        maxInterval = 4;
     }
 }

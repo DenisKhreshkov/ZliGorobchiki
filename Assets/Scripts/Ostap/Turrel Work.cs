@@ -119,7 +119,7 @@ public class TurrelWork : MonoBehaviour
         IsWorking = false;
         GetComponent<AudioSource>().Play();
         GetComponentInChildren<ParticleSystem>().Play();
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 3f);
         StopAllCoroutines();
     }
 }
