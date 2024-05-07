@@ -466,6 +466,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tower_
       objectReference: {fileID: 0}
+    - target: {fileID: 8791044044041324913, guid: b44fe0d014e6d7c48a0c7ce3c15aa2bd, type: 3}
+      propertyPath: liveTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
