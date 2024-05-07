@@ -67,10 +67,21 @@ public class ShopController : MonoBehaviour
     public void Back()
     {
         ShopPanel.SetActive(false);
+        GlobalVar.CanBuild = true;
     }
 
     public void Back2()
     {
         ShopPanel2.SetActive(false);
+        GlobalVar.CanBuild = true;
+    }
+
+    private void Start() => Invoke("AddMoney", 8f);
+
+    private void AddMoney()
+    {
+        totalMoney += Random.Range(1, 4);
+        UpdateCoinText();
+        Invoke("AddMoney", 3f);
     }
 }
