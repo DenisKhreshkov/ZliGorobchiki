@@ -13,9 +13,11 @@ public class TurrelWork : MonoBehaviour
     private GameObject _target;
 
     public bool IsWorking = true;
+
+    [SerializeField] private float liveTime;
     private void Awake()
     {
-       //s Invoke("Shot", 0.5f);
+        StartCoroutine(TurrelLive());
     }
     /*  private void FixedUpdate()
       {
@@ -89,4 +91,33 @@ public class TurrelWork : MonoBehaviour
         
     }
 
+    private IEnumerator Shake()
+    {
+        float shakeX;
+        float shakeZ;
+        while (true)
+        {
+            shakeX = Random.Range(-0.3f, 0.3f);
+            shakeZ = Random.Range(-0.3f, 0.3f);
+            transform.position = new Vector3(transform.position.x + shakeX, transform.position.y, transform.position.z + shakeZ);
+            yield return new WaitForSeconds(0.05f);
+            transform.position = new Vector3(transform.position.x - shakeX, transform.position.y, transform.position.z - shakeZ);
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+
+    private IEnumerator TurrelLive()
+    {
+        yield return new WaitForSeconds(liveTime);
+        StartCoroutine(Shake());
+        yield return new WaitForSeconds(2f);
+        MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer renderer in renderers)
+        {
+            renderer.enabled = false;
+        }
+        IsWorking = false;
+        GetComponent<AudioSource>().Play();
+        Destroy(gameObject, 2f);
+    }
 }

@@ -8,8 +8,8 @@ public class ShopController : MonoBehaviour
     public Text money;
     public float totalMoney = 999f;
     public float t1cost = 5f;
-    public float t2cost = 15f;
-    public float t3cost = 25f;
+    public float t2cost = 10f;
+    public float t3cost = 20f;
     public float b1cost = 5f;
     public float b2cost = 10f;
 
