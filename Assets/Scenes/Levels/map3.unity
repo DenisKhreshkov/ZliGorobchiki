@@ -3531,6 +3531,10 @@ PrefabInstance:
       propertyPath: loosingPanel
       value: 
       objectReference: {fileID: 1579684686}
+    - target: {fileID: 5749517010333223240, guid: c3455489540d49245bfc05fdcc618bc4, type: 3}
+      propertyPath: interfacePanel
+      value: 
+      objectReference: {fileID: 571653510796786675}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
