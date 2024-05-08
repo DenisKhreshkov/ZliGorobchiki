@@ -27,6 +27,7 @@ public class EnemySpawn : MonoBehaviour
 
     [Space(10)]
     [SerializeField] private GameObject particleSystemPrefab;
+    private AudioSource woodBreak;
     private void Start()
     {
         StartCoroutine(dragonSpawning());
@@ -75,10 +76,15 @@ public class EnemySpawn : MonoBehaviour
         minInterval = 0.5f;
         maxInterval = 2f;
         GetComponent<AudioSource>().Play();
+        GlobalVar.IsHardcore = true;
         yield return new WaitForSeconds(2f);
+        BreackAll();
+    }
+
+    private void BreackAll()
+    {
         TurrelWork[] turrels = FindObjectsOfType<TurrelWork>();
         BarierWork[] bariers = FindObjectsOfType<BarierWork>();
-        AudioSource woodBreak = null;
         if (turrels[0] != null) woodBreak = turrels[0].GetComponent<AudioSource>();
         else if (bariers[0] != null) woodBreak = bariers[0].GetComponent<AudioSource>();
         foreach (TurrelWork turrel in turrels)
@@ -91,6 +97,6 @@ public class EnemySpawn : MonoBehaviour
             Destroy(Instantiate(particleSystemPrefab, barier.transform.position, Quaternion.identity), 5f);
             Destroy(barier.gameObject);
         }
-        if (woodBreak != null) woodBreak.Play();
+         woodBreak.Play();
     }
 }

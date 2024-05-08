@@ -8442,6 +8442,10 @@ PrefabInstance:
       propertyPath: levelTime
       value: 162
       objectReference: {fileID: 0}
+    - target: {fileID: 7033647587579759790, guid: acbd944a38191f84fbde240b470721a8, type: 3}
+      propertyPath: interfacePanel
+      value: 
+      objectReference: {fileID: 1675856486857086870}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17147,7 +17151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7632370474348415341, guid: a41c779223de1c842abef590c83aec5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 77.10987
+      value: 78.15
       objectReference: {fileID: 0}
     - target: {fileID: 7632370474348415341, guid: a41c779223de1c842abef590c83aec5c, type: 3}
       propertyPath: m_LocalPosition.y

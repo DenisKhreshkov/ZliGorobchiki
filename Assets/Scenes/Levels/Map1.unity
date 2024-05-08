@@ -4430,7 +4430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7632370474348415341, guid: a41c779223de1c842abef590c83aec5c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.123297
+      value: -31.3
       objectReference: {fileID: 0}
     - target: {fileID: 7632370474348415341, guid: a41c779223de1c842abef590c83aec5c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14681,7 +14681,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14707,6 +14707,7 @@ MonoBehaviour:
   winPanel: {fileID: 5644229034324232533}
   blackScreen: {fileID: 852239256704795433}
   timeText: {fileID: 1205195733475367895}
+  interfacePanel: {fileID: 5841866402775610686}
 --- !u!154 &7049415104041606857
 TerrainCollider:
   m_ObjectHideFlags: 0

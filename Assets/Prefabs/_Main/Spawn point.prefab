@@ -83,6 +83,7 @@ MonoBehaviour:
     - {fileID: 2100000, guid: acd197acde96c544b8d8fd85cc2e8b20, type: 2}
     - {fileID: 2100000, guid: b610c12dfb915564fa7d6ed9771555e3, type: 2}
     - {fileID: 2100000, guid: 1131ac1e42ee4884ab91bd69310a2715, type: 2}
+  particleSystemPrefab: {fileID: 6875729051959872404, guid: d6fe85f392e5a80498b5adefc5191e89, type: 3}
 --- !u!82 &6746016072171414759
 AudioSource:
   m_ObjectHideFlags: 0

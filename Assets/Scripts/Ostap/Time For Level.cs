@@ -13,6 +13,8 @@ public class TimeForLevel : MonoBehaviour
     [SerializeField] private RectTransform blackScreen;
     [SerializeField] private Text timeText;
 
+    [SerializeField] private GameObject interfacePanel;
+
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -73,6 +75,7 @@ public class TimeForLevel : MonoBehaviour
                 PlayerPrefs.SetInt("Level3 complete", 100);
                 break;
         }
+        interfacePanel.SetActive(false);
     }
 
     public void Menu() => SceneManager.LoadScene(0);

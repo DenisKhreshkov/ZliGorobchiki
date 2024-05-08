@@ -1,1 +1,1 @@
-public class GlobalVar{internal static bool CanBuild = true;}
+public class GlobalVar{internal static bool CanBuild = true; internal static bool IsHardcore = false; }

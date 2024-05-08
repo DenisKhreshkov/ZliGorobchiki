@@ -33,6 +33,13 @@ public class DragonPath : MonoBehaviour
         _healthSlider.value = health;
         _towerTransform = GameObject.FindGameObjectWithTag("Finish").transform;
         _agent.SetDestination(_towerTransform.position);
+
+        if (GlobalVar.IsHardcore) 
+        {
+            _agent.speed = _agent.speed * 2.5f;
+            _agent.acceleration = _agent.acceleration * 3f;
+            _agent.angularSpeed = -_agent.angularSpeed * 2.5f;
+        } 
     }
 
     private void FixedUpdate()

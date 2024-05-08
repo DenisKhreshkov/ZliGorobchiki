@@ -22,6 +22,7 @@ public class MainCastle : MonoBehaviour
         _audioSource.volume = PlayerPrefs.GetFloat("Volume");
         Time.timeScale = 1.0f;
         GlobalVar.CanBuild = true;
+        GlobalVar.IsHardcore = false;
     }
     private void LateUpdate()
     {
