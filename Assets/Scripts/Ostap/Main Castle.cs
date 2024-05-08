@@ -12,6 +12,7 @@ public class MainCastle : MonoBehaviour
     [SerializeField] private Transform castleTransform;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private RectTransform loosingPanel;
+    [SerializeField] private GameObject interfacePanel;
 
     private void Start()
     {
@@ -42,6 +43,8 @@ public class MainCastle : MonoBehaviour
         loosingPanel.GetComponent<Animation>().Play();
         StartCoroutine(CastleFallDown());
         StartCoroutine(CastleShake());
+        if (interfacePanel != null)
+        interfacePanel.SetActive(false);
         DragonPath[] dragons = FindObjectsOfType<DragonPath>();
         foreach (DragonPath dragon in dragons)   
         dragon.End();

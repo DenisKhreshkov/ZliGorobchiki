@@ -67,10 +67,11 @@ public class EnemySpawn : MonoBehaviour
         minInterval -= 2;
         maxInterval -= 2;
         yield return new WaitForSeconds(40f);
-        minInterval = (minInterval / 2) + 2;
-        maxInterval = (maxInterval / 2) + 3;
+        minInterval = (minInterval / 2) + 1;
+        maxInterval = (maxInterval / 2) + 1;
         yield return new WaitForSeconds(30f);
-        minInterval = 2;
-        maxInterval = 4;
+        minInterval = 0.5f;
+        maxInterval = 2f;
+        GetComponent<AudioSource>().Play();
     }
 }
